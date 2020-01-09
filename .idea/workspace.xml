@@ -3,9 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="865422e2-d49c-427a-b9c1-d93cc14fac36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/products/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/products/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/Modal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/products/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/ProductModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ui/Action.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ui/Action.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +177,8 @@
       <updated>1578417142920</updated>
       <workItem from="1578417147859" duration="19655000" />
       <workItem from="1578504982824" duration="62000" />
-      <workItem from="1578505066901" duration="8319000" />
+      <workItem from="1578505066901" duration="8460000" />
+      <workItem from="1578578299276" duration="16347000" />
     </task>
     <servers />
   </component>
@@ -193,13 +202,25 @@
       <screen x="0" y="28" width="1366" height="740" />
     </state>
     <state x="416" y="156" width="524" height="486" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.28.1366.740@0.28.1366.740" timestamp="1578426054464" />
+    <state width="247" height="458" key="HiddenNamespacesPopup" timestamp="1578597681382">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="247" height="458" key="HiddenNamespacesPopup/0.28.1366.740@0.28.1366.740" timestamp="1578597681382" />
     <state x="427" y="215" width="501" height="367" key="NewPhpClassDialog" timestamp="1578429276973">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
     <state x="427" y="215" width="501" height="367" key="NewPhpClassDialog/0.28.1366.740@0.28.1366.740" timestamp="1578429276973" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578505875159">
+    <state x="293" y="28" width="770" height="740" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578586325449">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.28.1366.740@0.28.1366.740" timestamp="1578505875159" />
+    <state x="293" y="28" width="770" height="740" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.28.1366.740@0.28.1366.740" timestamp="1578586325449" />
+    <state x="347" y="175" key="run.anything.popup" timestamp="1578591759725">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state x="347" y="175" key="run.anything.popup/0.28.1366.740@0.28.1366.740" timestamp="1578591759725" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578592978238">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.28.1366.740@0.28.1366.740" timestamp="1578592978238" />
   </component>
 </project>

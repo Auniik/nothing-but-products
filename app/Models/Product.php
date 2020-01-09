@@ -11,7 +11,7 @@ class Product extends Model
     ];
 
     protected $hidden = [
-        'created_at', 'updated_at', 'brand_id', 'category_id'
+        'created_at', 'updated_at',
     ];
 
     public function brand()

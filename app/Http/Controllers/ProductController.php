@@ -35,7 +35,7 @@ class ProductController extends Controller
             'name' => 'required|max:255|unique:products',
             'brand_id' => 'required',
             'category_id' => 'required',
-            'price' => 'required|number',
+            'price' => 'required|numeric',
         ]);
         Product::create($attributes);
 
@@ -66,10 +66,10 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $attributes = $request->validate([
-            'name' => "required|max:255|unique:products,{$product->id}",
+            'name' => "required|max:255|unique:products,name,{$product->id}",
             'brand_id' => 'required',
             'category_id' => 'required',
-            'price' => 'required|number',
+            'price' => 'required|numeric',
         ]);
 
         $product->update($attributes);
