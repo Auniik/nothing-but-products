@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865422e2-d49c-427a-b9c1-d93cc14fac36" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/products/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/products/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ui/QuickCreateModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/products/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/products/ProductModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ui/Action.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ui/Action.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ui/Action.vue" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,20 +151,32 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/products" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/components/products" />
+      <recent name="$PROJECT_DIR$/resources/js/components/ui" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/components/products" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.ProductModal.vue">
+    <configuration name="ProductModal.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/testproduct/resources/js/components/products/ProductModal.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.ProductModal.vue" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -191,6 +205,7 @@
       <workItem from="1578505066901" duration="8460000" />
       <workItem from="1578578299276" duration="21716000" />
       <workItem from="1578748015752" duration="3594000" />
+      <workItem from="1578763349300" duration="13009000" />
     </task>
     <servers />
   </component>
@@ -202,6 +217,14 @@
       <screen x="0" y="28" width="1366" height="740" />
     </state>
     <state x="278" y="59" width="800" height="679" key="#Composer/0.28.1366.740@0.28.1366.740" timestamp="1578419210428" />
+    <state x="449" y="80" width="458" height="637" key="#Index.vue" timestamp="1578778700311">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state x="449" y="80" width="458" height="637" key="#Index.vue/0.28.1366.740@0.28.1366.740" timestamp="1578778700311" />
+    <state x="278" y="59" width="800" height="679" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578783242609">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state x="278" y="59" width="800" height="679" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1366.740@0.28.1366.740" timestamp="1578783242609" />
     <state x="382" y="204" width="592" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578419246376">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
@@ -214,10 +237,62 @@
       <screen x="0" y="28" width="1366" height="740" />
     </state>
     <state x="416" y="156" width="524" height="486" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.28.1366.740@0.28.1366.740" timestamp="1578426054464" />
-    <state width="247" height="458" key="HiddenNamespacesPopup" timestamp="1578597681382">
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1578783216963">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
-    <state width="247" height="458" key="HiddenNamespacesPopup/0.28.1366.740@0.28.1366.740" timestamp="1578597681382" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.28.1366.740@0.28.1366.740" timestamp="1578783216963" />
+    <state width="1041" height="238" key="GridCell.Tab.0.bottom" timestamp="1578779588963">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.0.bottom/0.28.1366.740@0.28.1366.740" timestamp="1578779588963" />
+    <state width="1041" height="238" key="GridCell.Tab.0.center" timestamp="1578779588963">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.0.center/0.28.1366.740@0.28.1366.740" timestamp="1578779588963" />
+    <state width="1041" height="238" key="GridCell.Tab.0.left" timestamp="1578779588962">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.0.left/0.28.1366.740@0.28.1366.740" timestamp="1578779588962" />
+    <state width="1041" height="238" key="GridCell.Tab.0.right" timestamp="1578779588963">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.0.right/0.28.1366.740@0.28.1366.740" timestamp="1578779588963" />
+    <state width="1041" height="238" key="GridCell.Tab.1.bottom" timestamp="1578779588979">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.1.bottom/0.28.1366.740@0.28.1366.740" timestamp="1578779588979" />
+    <state width="1041" height="238" key="GridCell.Tab.1.center" timestamp="1578779588965">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.1.center/0.28.1366.740@0.28.1366.740" timestamp="1578779588965" />
+    <state width="1041" height="238" key="GridCell.Tab.1.left" timestamp="1578779588964">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.1.left/0.28.1366.740@0.28.1366.740" timestamp="1578779588964" />
+    <state width="1041" height="238" key="GridCell.Tab.1.right" timestamp="1578779588966">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.1.right/0.28.1366.740@0.28.1366.740" timestamp="1578779588966" />
+    <state width="1041" height="238" key="GridCell.Tab.2.bottom" timestamp="1578779588981">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.2.bottom/0.28.1366.740@0.28.1366.740" timestamp="1578779588981" />
+    <state width="1041" height="238" key="GridCell.Tab.2.center" timestamp="1578779588980">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.2.center/0.28.1366.740@0.28.1366.740" timestamp="1578779588980" />
+    <state width="1041" height="238" key="GridCell.Tab.2.left" timestamp="1578779588980">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.2.left/0.28.1366.740@0.28.1366.740" timestamp="1578779588980" />
+    <state width="1041" height="238" key="GridCell.Tab.2.right" timestamp="1578779588981">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="1041" height="238" key="GridCell.Tab.2.right/0.28.1366.740@0.28.1366.740" timestamp="1578779588981" />
+    <state width="247" height="458" key="HiddenNamespacesPopup" timestamp="1578783218295">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state width="247" height="458" key="HiddenNamespacesPopup/0.28.1366.740@0.28.1366.740" timestamp="1578783218295" />
     <state x="427" y="215" width="501" height="367" key="NewPhpClassDialog" timestamp="1578429276973">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
@@ -230,9 +305,9 @@
       <screen x="0" y="28" width="1366" height="740" />
     </state>
     <state x="347" y="175" key="run.anything.popup/0.28.1366.740@0.28.1366.740" timestamp="1578591759725" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578592978238">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1578781012883">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.28.1366.740@0.28.1366.740" timestamp="1578592978238" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.28.1366.740@0.28.1366.740" timestamp="1578781012883" />
   </component>
 </project>

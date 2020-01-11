@@ -37,6 +37,7 @@ class ProductController extends Controller
             'category_id' => 'required',
             'price' => 'required|numeric',
         ]);
+
         Product::create($attributes);
 
         return response([

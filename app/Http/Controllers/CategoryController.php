@@ -33,10 +33,11 @@ class CategoryController extends Controller
             'name' => 'required|max:255|unique:categories'
         ]);
 
-        Category::create($attributes);
+        $category = Category::create($attributes);
 
         return response()->json([
-            'message' => 'Category Created Successfully!'
+            'message' => 'Category Created Successfully!',
+            'category' => $category
         ], 200);
     }
 }
