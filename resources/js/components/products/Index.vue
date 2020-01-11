@@ -43,7 +43,8 @@
         </div>
 
         <ProductModal ref="addModal" :edit="isEditModal">
-            <form  @submit.prevent="isEditModal ? handleUpdate() : saveProduct()">
+            <form  @submit.prevent="isEditModal ? handleUpdate() : saveProduct()"
+                   @keydown="form.onKeydown($event)">
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12">
@@ -199,7 +200,7 @@
             showModal() {
                 this.form.clear()
                 this.form.reset()
-
+                this.isEditModal = false;
                 let element = this.$refs.addModal.$el;
                 $(element).modal('show')
             },
@@ -220,8 +221,8 @@
 
             handleEdit(product){
 
-                this.isEditModal = true,
                 this.showModal()
+                this.isEditModal = true;
                 this.form.fill(product);
             },
 

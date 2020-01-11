@@ -15,7 +15,6 @@
                 </div>
             </div>
         </td>
-<!--        <ProductModal ref="modal" edit="true"/>-->
     </div>
 
 </template>

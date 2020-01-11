@@ -1943,8 +1943,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     ProductList: _products_Index__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  methods: {}
+  }
 });
 
 /***/ }),
@@ -1961,6 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_Action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/Action */ "./resources/js/components/ui/Action.vue");
 /* harmony import */ var _ProductModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductModal */ "./resources/js/components/products/ProductModal.vue");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Modal */ "./resources/js/components/products/Modal.vue");
+//
 //
 //
 //
@@ -2163,6 +2163,7 @@ __webpack_require__.r(__webpack_exports__);
     showModal: function showModal() {
       this.form.clear();
       this.form.reset();
+      this.isEditModal = false;
       var element = this.$refs.addModal.$el;
       $(element).modal('show');
     },
@@ -2184,7 +2185,8 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     handleEdit: function handleEdit(product) {
-      this.isEditModal = true, this.showModal();
+      this.showModal();
+      this.isEditModal = true;
       this.form.fill(product);
     },
     handleUpdate: function handleUpdate() {
@@ -2356,7 +2358,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _products_ProductModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../products/ProductModal */ "./resources/js/components/products/ProductModal.vue");
-//
 //
 //
 //
@@ -39620,6 +39621,9 @@ var render = function() {
                 submit: function($event) {
                   $event.preventDefault()
                   _vm.isEditModal ? _vm.handleUpdate() : _vm.saveProduct()
+                },
+                keydown: function($event) {
+                  return _vm.form.onKeydown($event)
                 }
               }
             },
@@ -40138,7 +40142,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "modal fade bd-example-modal-lg",
+      staticClass: "modal fade",
       attrs: {
         "data-backdrop": "static",
         id: "exampleModalScrollable",

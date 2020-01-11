@@ -9,9 +9,5 @@
 
     export default{
         components: {ProductList},
-
-
-        methods: {
-        },
     }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="modal fade bd-example-modal-lg" data-backdrop="static" id="exampleModalScrollable" tabindex="-1" role="dialog"
+    <div class="modal fade" data-backdrop="static" id="exampleModalScrollable" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
