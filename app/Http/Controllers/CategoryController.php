@@ -3,29 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
 
     /**
      * Get All Brands.
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse | array
      */
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(
-            Category::orderByDesc('id')->pluck('name', 'id'), 200
-        );
+        if ($request->wantsJson()){
+            return response()->json(
+                Category::latest()->pluck('name', 'id'), 200
+            );
+        }
+        return [];
     }
 
 
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {

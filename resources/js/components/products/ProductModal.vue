@@ -6,7 +6,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">{{isEditModal ? 'Edit' : 'Add New'}} Product</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button"
+                            class="close"
+                            aria-label="Close"
+                            @click="handleHideModal"
+                    >
                         <span aria-hidden="true">&times;</span>
 
                     </button>
@@ -110,7 +114,6 @@
                     <div class="modal-footer">
                         <button type="button"
                                 class="btn btn-secondary"
-                                data-dismiss="modal"
                                 @click="handleHideModal"
                         >Close</button>
                         <button type="submit"
@@ -152,6 +155,7 @@
         methods: {
             showModal(){
                 this.clearForm();
+                this.isEditModal = false;
                 this.refreshCategoriesBrands();
                 $(this.$el).modal('show');
             },
@@ -167,13 +171,13 @@
 
             handleStore () {
                 this.form.post('/api/products')
-                    .then(({ data }) => this.refreshProducts())
+                    .then(({ data }) => this.refreshProducts(data.message))
                     .catch(err => console.log(err.response))
             },
             handleUpdate(){
                 this.form.patch(`api/products/${this.form.id}`)
                     .then(({data}) => {
-                        this.refreshProducts()
+                        this.refreshProducts(data.message)
                         this.isEditModal = false;
                     })
                     .catch(err => console.log(err.response))
@@ -201,7 +205,8 @@
                 this.form.reset()
             },
 
-            refreshProducts(){
+            refreshProducts(message){
+                this.$toasted.show(message)
                 this.handleHideModal()
                 this.$parent.getProducts()
             },

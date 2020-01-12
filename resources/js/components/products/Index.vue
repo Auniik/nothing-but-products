@@ -25,14 +25,15 @@
                     <td class="text-center">
                         <div class="btn-group" role="group">
                             <div class="btn-group" role="group">
-                                <button id="btnGroupDrop1" type="button" class="btn btn-link"
+                                <button id="btnGroupDrop1" type="button" class="btn btn-link text-secondary"
                                         data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-ellipsis-v"> </i>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                     <button class="dropdown-item" @click="handleEdit(product)" >Edit</button>
-                                    <button class="dropdown-item" @click="handleDelete(product.id)" >Delete</button>
+                                    <button class="dropdown-item text-danger" @click="handleDelete(product.id)" >Delete
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -48,6 +49,8 @@
 
 <script>
     import ProductModal from "./ProductModal";
+
+
     export default {
         name: "Index",
         components: {ProductModal},
@@ -74,7 +77,7 @@
                     window.axios.delete(`api/products/${productId}`)
                         .then(({data}) => {
                             this.getProducts()
-                            console.log('Deleted Successfully!')
+                            this.$toasted.show(data.message)
                         })
             },
 

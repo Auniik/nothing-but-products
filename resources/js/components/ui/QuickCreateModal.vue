@@ -7,7 +7,9 @@
                     <form @submit.prevent="handleSave">
                         <div class="modal-header">
                             <h5 class="modal-title" id="childModalLabel">Add {{options.label}} </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close"
+                                    @click="hideModal"
+                                    aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -20,6 +22,7 @@
                                        name="name"
                                        v-model="form.name"
                                        id="recipient-name"
+                                       autocomplete="off"
                                 >
                                 <has-error :form="form" field="name"/>
                             </div>
@@ -63,9 +66,10 @@
                 $(this.$el).modal('hide').animate(100);
             },
 
-            handleSave(){
-                this.form.post(this.options.url)
+            async handleSave(){
+                await this.form.post(this.options.url)
                     .then(({data}) => {
+                        this.$toasted.show(data.message)
                         this.$parent.refreshCategoriesBrands(),
                         this.hideModal();
                     }).catch(e => console.log(e));

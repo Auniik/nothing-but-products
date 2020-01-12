@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -10,21 +11,25 @@ class BrandController extends Controller
 
     /**
      * Getting All Brands.
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse | array
      */
     public function index()
     {
-        return response()->json(
-            Brand::orderByDesc('id')->pluck('name', 'id'), 200
-        );
+        if (\request()->wantsJson()){
+            return response()->json(
+                Brand::latest()->pluck('name', 'id'), 200
+            );
+        }
+        return [];
+
     }
 
 
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param Request $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
