@@ -4,9 +4,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-content">
-                    <form @submit.prevent="addData">
+                    <form @submit.prevent="handleSave">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="childModalLabel">Add {{quickModalOption.label}} </h5>
+                            <h5 class="modal-title" id="childModalLabel">Add {{options.label}} </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -45,23 +45,31 @@
                     id: '',
                     name: ''
                 }),
+                options: {}
             }
         },
 
         methods: {
-            addData(){
-                this.form.post(this.quickModalOption.url)
-                    .then(({data}) => {
-                        this.$parent.getBrands(),
-                        this.$parent.getCategories(),
-                        this.hideModal();
-                    }).catch(e => console.log(e));
+
+            showModal(options){
+                this.options = options;
+                $(this.$el).modal('show');
             },
 
             hideModal(){
-                let element = this.$el
-                $(element).modal('hide').animate(100);
-            }
+                this.options = {};
+                this.form.clear();
+                this.form.reset();
+                $(this.$el).modal('hide').animate(100);
+            },
+
+            handleSave(){
+                this.form.post(this.options.url)
+                    .then(({data}) => {
+                        this.$parent.refreshCategoriesBrands(),
+                        this.hideModal();
+                    }).catch(e => console.log(e));
+            },
         }
 
     }

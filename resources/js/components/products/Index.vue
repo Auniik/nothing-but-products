@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-header d-flex">
             <h4>Products</h4>
-            <button class="btn btn-dark mr-0 ml-auto" @click="showModal">Add</button>
+            <button class="btn btn-dark mr-0 ml-auto" @click="handleCreateModal">Add</button>
         </div>
 
         <div class="card-body">
@@ -48,10 +48,9 @@
 
 <script>
     import ProductModal from "./ProductModal";
-    import QuickCreateModal from "../ui/QuickCreateModal"
     export default {
         name: "Index",
-        components: {ProductModal, QuickCreateModal},
+        components: {ProductModal},
 
         data() {
             return {
@@ -60,22 +59,14 @@
         },
 
         methods: {
-            showModal() {
-                this.$refs.addModal.clearForm()
-                let element = this.$refs.addModal.$el;
-                $(element).modal('show')
-            },
-
-            hideModal(){
-                this.$refs.addModal.clearForm()
-                let element = this.$refs.addModal.$el;
-                $(element).modal('hide')
+            handleCreateModal() {
+                this.$refs.addModal.showModal();
             },
 
             handleEdit(product){
-                this.isEditModal = true;
                 this.$refs.addModal.handleEdit(product)
             },
+
 
             handleDelete(productId){
                 let confirmed = confirm('Are you sure wan\'t to delete?');
@@ -96,27 +87,12 @@
                     .catch(e => console.log(e))
             },
 
-            getBrands(){
-                window.axios.get('/api/brands')
-                    .then(({data}) => {
-                        this.brands = data
-                    })
-                    .catch(e => console.log(e))
-            },
-
-            getCategories(){
-                window.axios.get('/api/categories')
-                    .then(({data}) => {
-                        this.categories = data
-                    })
-                    .catch(e => console.log(e))
-            }
         },
 
 
-        mounted() {
+        created() {
             this.getProducts()
-        },
+        }
     }
 </script>
 

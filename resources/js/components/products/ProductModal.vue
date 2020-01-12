@@ -11,8 +11,9 @@
 
                     </button>
                 </div>
-                <form  @submit.prevent="isEditModal ? handleUpdate() : saveProduct()"
-                       @keydown="form.onKeydown($event)">
+                <form  @submit.prevent="isEditModal ? handleUpdate() : handleStore()"
+                       @keydown="form.onKeydown($event)"
+                >
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-12">
@@ -51,7 +52,8 @@
                                                 class="btn btn-dark rounded-right"
                                                 @click="showQuickModal({
                                                     label: 'Category',
-                                                    url: '/api/categories'
+                                                    url: '/api/categories',
+                                                    target: 'categories'
                                                 })"
                                         >+
                                         </button>
@@ -79,7 +81,8 @@
                                         <button type="button"
                                                 @click="showQuickModal({
                                                     label: 'Brands',
-                                                    url: '/api/brands'
+                                                    url: '/api/brands',
+                                                    target: 'brands'
                                                 })"
                                                 class="btn btn-dark rounded-right"
                                         >+
@@ -105,25 +108,28 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-dark">{{isEditModal ? 'Update Product' : 'Save changes'}}</button>
+                        <button type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                                @click="handleHideModal"
+                        >Close</button>
+                        <button type="submit"
+                                class="btn btn-dark">
+                            {{isEditModal ? 'Update Product' : 'Save changes'}}
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
 
-        <QuickCreateModal ref="quickModal"
-                          :quickModalOption="quickModalOption"
-        />
+        <QuickCreateModal ref="quickModal" />
     </div>
 
 
 </template>
 
 <script>
-
     import QuickCreateModal from "../ui/QuickCreateModal";
-
 
     export default {
         name: "ProductModal",
@@ -140,67 +146,69 @@
                 brands: [],
                 categories: [],
                 isEditModal: false,
-                quickModalOption: {}
             }
         },
 
         methods: {
-            saveProduct () {
-                this.form.post('/api/products')
-                    .then(({ data }) => {
-                        this.$parent.hideModal()
-                        this.$parent.getProducts()
-                    }).catch(err => console.log(err.response))
+            showModal(){
+                this.clearForm();
+                this.refreshCategoriesBrands();
+                $(this.$el).modal('show');
             },
-
+            handleHideModal(){
+                this.clearForm();
+                $(this.$el).modal('hide')
+            },
             handleEdit(product){
+                this.showModal();
                 this.isEditModal = true;
-                this.clearForm()
-                this.$parent.showModal()
                 this.form.fill(product);
             },
 
+            handleStore () {
+                this.form.post('/api/products')
+                    .then(({ data }) => this.refreshProducts())
+                    .catch(err => console.log(err.response))
+            },
             handleUpdate(){
                 this.form.patch(`api/products/${this.form.id}`)
                     .then(({data}) => {
-                        this.$parent.hideModal()
-                        this.$parent.getProducts()
+                        this.refreshProducts()
+                        this.isEditModal = false;
                     })
                     .catch(err => console.log(err.response))
             },
 
+
             showQuickModal(options){
-                this.quickModalOption = options
-                this.$refs.quickModal.form.clear()
-                let element = this.$refs.quickModal.$el;
-                $(element).modal('show')
+                this.$refs.quickModal.showModal(options)
             },
+
 
             getBrands(){
                 window.axios.get('/api/brands')
-                    .then(({data}) => {
-                        this.brands = data
-                    })
+                    .then(({data}) => this.brands = data )
                     .catch(e => console.log(e))
             },
-
             getCategories(){
                 window.axios.get('/api/categories')
-                    .then(({data}) => {
-                        this.categories = data
-                    })
+                    .then(({data}) =>  this.categories = data )
                     .catch(e => console.log(e))
             },
 
             clearForm(){
                 this.form.clear()
                 this.form.reset()
-            }
-        },
+            },
 
-        mounted() {
-            this.getBrands(),
-            this.getCategories()
+            refreshProducts(){
+                this.handleHideModal()
+                this.$parent.getProducts()
+            },
+            refreshCategoriesBrands() {
+                this.getBrands();
+                this.getCategories();
+            }
         },
 
     }
