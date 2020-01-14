@@ -33,7 +33,7 @@
                                     <has-error :form="form" field="name"/>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6">
 
                                 <div class="row">
                                     <div class="col-10 pr-0">
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6">
                                 <div class="row">
                                     <div class="col-10 pr-0">
                                         <div class="form-group">
